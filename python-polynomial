@@ -1,0 +1,22 @@
+# Read x and k
+x, k = map(int, input().split())
+
+# Read the polynomial
+P = input()
+
+# Evaluate P with the given x
+value_at_x = eval(P.replace('x', str(x)))
+
+# Check if value_at_x equals k
+print(value_at_x == k)
+
+
+input(): This built-in function reads a line from the input (usually from the keyboard or stdin in coding challenges) and returns it as a string.
+
+split(): This method is called on a string and returns a list of substrings. By default, it splits the string using whitespace as the delimiter. So, if the input string was "5 3", split() would transform it into ['5', '3'].
+
+map(int, input().split()): The map() function applies the int function to every item of the input list (in this case, the result of split()). Essentially, it's converting every substring into an integer. Continuing with our example, this would transform ['5', '3'] into an iterable with values [5, 3].
+
+x, k = ...: This is multiple assignment. Python allows you to assign multiple values to multiple variables in a single line. This will assign the first value from our mapped result to x and the second value to k. So, in our example, x would be assigned the value 5 and k the value 3.
+
+Putting it all together, this line reads a string of two space-separated integers from the input, splits the string into individual integer values, and assigns these values to x and k, respectively.

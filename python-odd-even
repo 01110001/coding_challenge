@@ -1,0 +1,35 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#An odd number, when divided by 2, has a remainder of 1.
+#An even number, when divided by 2, has a remainder of 0.
+#In programming, you often use the modulus operator (%) to obtain the remainder of a division.
+#So, for any integer n
+# if n%2 ==1 then n is odd
+#if n%2 == 0 then n is even
+
+
+if __name__ == '__main__':
+    n = int(input().strip())
+
+#range must be set to 6 because it include to but not 5
+if (n % 2) == 1:
+    print("Weird")
+elif (n % 2) == 0 and n in range(2, 6): # Note: 6 because range is exclusive at the end
+    print("Not Weird")
+elif (n % 2) == 0 and n in range(6, 21): # Note: 21 because range is exclusive at the end
+    print("Weird")
+elif (n % 2) == 0 and n > 20:
+    print("Not Weird")
+    
+    
+#Here a more concise version of the code
+if n % 2 == 1 or (6 <= n <= 20):
+    print("Weird")
+else:
+    print("Not Weird")

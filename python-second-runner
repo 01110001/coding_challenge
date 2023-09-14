@@ -1,0 +1,11 @@
+n = int(input())
+arr = list(map(int, input().split()))
+
+# Remove duplicates by converting to a set, then convert back to a list
+unique_scores = list(set(arr))
+
+# Sort the scores in descending order
+sorted_scores = sorted(unique_scores, reverse=True)
+
+# Print the second maximum score
+print(sorted_scores[1])

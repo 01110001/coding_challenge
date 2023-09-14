@@ -1,0 +1,20 @@
+    records = []
+    for i in range(int(input())):
+        name = input()
+        score = float(input())
+        records.append([name,score])
+
+# Sort records by score first and then by name
+records.sort(key=lambda x: (x[1], x[0]))
+
+# Find the second lowest score
+second_lowest_score = None
+for r in records:
+    if r[1] != records[0][1]:  # Compare with the lowest score
+        second_lowest_score = r[1]
+        break
+
+# Print names of students with the second lowest score
+for r in records:
+    if r[1] == second_lowest_score:
+        print(r[0])

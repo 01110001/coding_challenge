@@ -1,0 +1,79 @@
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        #assign the first value to name and all the second value to line (*line)
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+    scores = student_marks[query_name]
+    mean_score = sum(scores) / len(scores)
+    # Printing the mean score rounded to two decimal places
+    print("{:.2f}".format(mean_score))
+
+Input number of students:
+python
+Copy code
+n = int(input())
+This line prompts the user to enter a number (presumably the number of students) and then converts that number from a string to an integer.
+
+Initialize empty dictionary:
+python
+Copy code
+student_marks = {}
+Here, you're initializing an empty dictionary. This dictionary will be used to store each student's name as a key and their list of scores as the associated value.
+
+Input student names and scores:
+python
+Copy code
+for _ in range(n):
+    name, *line = input().split()
+    scores = list(map(float, line))
+    student_marks[name] = scores
+This loop will run n times (once for each student).
+
+name, *line = input().split(): The user is expected to input a student's name followed by their scores, separated by spaces. The .split() function breaks this input into a list of strings. The first string (the student's name) goes to the name variable, while the rest (the scores) go to the line list.
+
+scores = list(map(float, line)): This line converts each string score in the line list to a floating-point number. For example, if line was ['90', '80', '70'], scores would become [90.0, 80.0, 70.0].
+
+student_marks[name] = scores: Here, you're adding an entry to the student_marks dictionary where the key is the student's name and the value is their list of scores.
+
+Input query name:
+python
+Copy code
+query_name = input()
+This line prompts the user to input a student's name. The goal is to find out the average score for this particular student.
+
+Calculate mean for the given query name:
+python
+Copy code
+scores = student_marks[query_name]
+mean_score = sum(scores) / len(scores)
+Here, you first retrieve the list of scores associated with the query_name from the student_marks dictionary. Then, you compute the mean (average) of these scores by dividing their sum by the number of scores.
+
+Print the mean score:
+python
+Copy code
+print("{:.2f}".format(mean_score))
+This line prints the mean_score rounded to two decimal places.
+
+Example Execution:
+Let's run through an example for better clarity:
+
+Input:
+
+Copy code
+2
+John 90 80 70
+Jane 85 90 95
+John
+Output:
+
+Copy code
+80.00
+Here's what happens:
+
+We've 2 students.
+John has scores of 90, 80, and 70.
+Jane has scores of 85, 90, and 95.
+We want to know John's average score. The program calculates it as (90 + 80 + 70) / 3 = 240 / 3 = 80.00 and then prints that result.

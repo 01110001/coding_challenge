@@ -1,0 +1,12 @@
+def merge_the_tools(string, k):
+    #range(start, stop, step), range begin at 0, len(string) where is stop,k = increment
+    for i in range(0, len(string), k):
+        #chunk would be = to AAB,CAA,AD,ADA
+        chunk = string[i:i+k]
+        result = []
+        #now it will loop for each character of each chunk
+        #if le charaters is not currently in the chunk it will append it
+        for char in chunk:
+            if char not in result:
+                result.append(char)
+        print(''.join(result))

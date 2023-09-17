@@ -1,0 +1,11 @@
+# Complete the solve function below.
+def solve(s):
+    return ' '.join(word.capitalize() for word in s.split(' '))
+
+s.split(' '): This splits the string s into a list of words wherever there's a space. For example, "hello world".split(' ') would give us ["hello", "world"].
+
+word.capitalize() for word in ...: This is a loop that goes through each word in the list. For each word, it capitalizes the first letter. For example, if we have the word "hello", this would turn it into "Hello".
+
+' '.join(...): After we have a list of capitalized words, this step joins them back together into a single string, with a space between each word.
+
+So, in essence, this line of code takes a string, splits it into words, capitalizes the first letter of each word, and then joins the words back together into a single string.

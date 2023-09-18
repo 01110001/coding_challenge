@@ -1,0 +1,48 @@
+
+if __name__ == '__main__':
+    n = int(input())
+    integer_list = map(int, input().split())
+    t = tuple(integer_list)
+    print(hash(t))
+
+
+
+
+
+Hashes are primarily used to quickly locate a data record given its search key. Here are some common uses and contexts where hashes are found:
+
+Hash Tables (or Hash Maps):
+
+Hashes are foundational to data structures like hash tables or hash maps.
+When you add an item to a hash table, the key is hashed to produce an integer, and this integer determines where in the table the corresponding value will be stored.
+When you want to retrieve a value from a hash table, you hash the key again to find out where the value is and get it. This operation is, on average, constant time O(1).
+Caching:
+
+Hashes can be used to quickly look up previously computed values, to avoid the cost of re-computation.
+Data Integrity:
+
+Cryptographic hash functions are used to verify the integrity of data during transmission. If even a single bit changes in the original data, the hash value will change, signaling potential corruption or tampering.
+For example, websites hosting software downloads often provide a hash value (e.g., an MD5 or SHA-256 hash) for the file. After you download the file, you can compute its hash and compare it to the provided value to ensure the file wasn't corrupted during download.
+Digital Signatures:
+
+Hashes are involved in the process of creating digital signatures, which are used to verify the authenticity and integrity of a message or document.
+Password Storage:
+
+Storing passwords in plaintext is a significant security risk. Instead, systems often store a hash of the password. When you enter your password, the system hashes it and checks if it matches the stored hash.
+Modern practices also involve "salting" passwords before hashing to prevent rainbow table attacks.
+Data Deduplication:
+
+When storing data, especially in backup and storage solutions, hashes can be used to identify duplicate pieces of data.
+Load Balancing:
+
+Some load balancers use consistent hashing to distribute traffic to a cluster of servers.
+Distributed Systems:
+
+Hash functions can be used to partition data across multiple nodes or servers. For example, in distributed databases or file systems.
+Bloom Filters:
+
+A probabilistic data structure that uses multiple hash functions to test whether an element is a member of a set or not.
+Git Version Control System:
+
+Every commit in Git is identified by a SHA-1 hash. This hash represents the changes made in that commit, allowing Git to quickly detect changes and manage versions.
+The speed, efficiency, and usefulness of hash functions in these applications come at a cost: hash functions can produce "collisions" where two different inputs produce the same output. In many applications, this issue is manageable. However, in cryptographic applications, care needs to be taken to ensure that collisions are extremely unlikely and computationally difficult to produce.

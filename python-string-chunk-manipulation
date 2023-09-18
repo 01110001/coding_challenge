@@ -1,0 +1,17 @@
+def wrap(string, max_width):
+    return '\n'.join([string[i:i+max_width] for i in range(0, len(string), max_width)])
+
+
+def wrap(string, max_width):
+    # Create an empty list to hold the wrapped segments of the string
+    wrapped_lines = []
+
+    # Iterate over the string in steps of max_width
+    for i in range(0, len(string), max_width):
+        segment = string[i:i+max_width]  # Extract a segment of length max_width from the string
+        wrapped_lines.append(segment)    # Add the segment to our list
+
+    # Join the list into a single string with newline characters between segments
+    result = '\n'.join(wrapped_lines)
+    
+    return result

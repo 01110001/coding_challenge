@@ -1,0 +1,47 @@
+s = input()
+checks = [str.isalnum, str.isalpha, str.isdigit, str.islower, str.isupper]
+
+for check in checks:
+    print(any(check(c) for c in s))
+
+
+#other way of doing it
+def string_properties(s):
+    # Check for any alphanumeric characters
+    print(any(char.isalnum() for char in s))
+    # Check for any alphabetical characters
+    print(any(char.isalpha() for char in s))
+    # Check for any digits
+    print(any(char.isdigit() for char in s))
+    # Check for any lowercase characters
+    print(any(char.islower() for char in s))
+    # Check for any uppercase characters
+    print(any(char.isupper() for char in s))
+
+# Example usage:
+s = input()
+string_properties(s)
+
+
+Inside the function, we create a list called checks. This list contains five functions (or, more precisely, method references):
+
+str.isalnum checks if a character is alphanumeric (i.e., a letter or a number).
+str.isalpha checks if a character is alphabetic.
+str.isdigit checks if a character is a digit.
+str.islower checks if a character is lowercase.
+str.isupper checks if a character is uppercase.
+All these methods are applied to individual characters of a string, not the entire string. So, if we wanted to check an entire string with one of these methods, we'd have to iterate through the string character by character.
+
+For each method in our list:
+
+for c in s: This is a generator expression that iterates through each character c in the string s.
+check(c): Applies the current method (e.g., str.isalpha, str.isdigit, etc.) to the character c.
+any(...): This function checks if at least one of the results of the generator expression is True. In other words, it checks if at least one character in the string satisfies the current condition (is alphanumeric, is alphabetic, etc.).
+print(...): Finally, we print the result, which will be either True or False.
+
+
+
+
+
+
+  

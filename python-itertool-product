@@ -1,0 +1,13 @@
+from itertools import product
+
+# Read the inputs
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+
+# Calculate the product and print the result
+AxB = list(product(A,B))
+print(*AxB)
+
+#You could just have done this one
+# the * unpack the list.
+print(*product(A,B))

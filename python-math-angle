@@ -1,0 +1,75 @@
+import cmath
+
+# Read the complex number // stip remove the extra space __space__
+z = complex(input().strip())
+
+# Print the magnitude (abs turn number to pos)
+print(abs(z))
+
+# Print the phase
+print(cmath.phase(z))
+
+
+La fonction phase(), disponible dans le module cmath de Python, est utilisée pour calculer la phase (ou argument) d'un nombre complexe. En essence, la phase d'un nombre complexe est l'angle qu'il forme avec l'axe des abscisses positif (axe réel) dans le plan complexe.
+
+Soit un nombre complexe 
+�
+=
+�
++
+�
+�
+z=a+bi, où 
+�
+a est la partie réelle et 
+�
+b est la partie imaginaire, la phase 
+�
+θ est donnée par :
+
+�
+=
+arctan
+⁡
+(
+�
+�
+)
+θ=arctan( 
+a
+b
+​
+ )
+
+Voici ce que fait la fonction phase() :
+
+Pour un nombre complexe non nul : Elle renvoie l'angle de phase dans l'intervalle 
+[
+−
+�
+,
+�
+]
+[−π,π]. C'est l'angle entre l'axe des abscisses positif et la ligne reliant l'origine au point représentant le nombre complexe dans le plan complexe.
+
+
+
+Voici comment vous pouvez utiliser la fonction phase() :
+
+python
+Copy code
+import cmath
+
+z = complex(1, 1)
+print(cmath.phase(z))  # Ceci affichera π/4 ou 0.785... qui équivaut à 45 degrés
+Il est important de noter que la phase (ou argument) d'un nombre complexe n'est pas unique. Bien que la valeur principale se situe dans la plage 
+[
+−
+�
+,
+�
+]
+[−π,π], vous pouvez ajouter n'importe quel multiple de 
+2
+�
+2π pour obtenir une autre phase valide pour le même nombre. Cependant, la fonction phase() de Python renvoie toujours la valeur principale.

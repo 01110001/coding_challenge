@@ -1,0 +1,38 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import namedtuple
+
+# Parse the number of students
+n = int(input())
+
+# Parse the order of columns and create a namedtuple class 'Student'
+columns = input().split()
+Student = namedtuple('Student', columns)
+
+# Calculate the sum of marks
+sum_marks = sum([int(student.MARKS) for student in [Student(*input().split()) for _ in range(n)]])
+
+# Print the average rounded to 2 decimal places
+print("{:.2f}".format(sum_marks / n))
+
+
+Benefits of namedtuple:
+
+Readability: You can use field names instead of integer indices, which can make code more self-explanatory.
+No More Magic Numbers: Instead of using indices which might not be immediately clear (like student[1]), you can use descriptive field names (like student.MARKS).
+Immutable: Just like tuples, namedtuples are immutable. This means once you create one, you can't modify it.
+
+
+
+Color = namedtuple('Color', ['red', 'green', 'blue'])
+color = Color(255, 0, 150)
+color.red    # Outputs: 255
+color.green  # Outputs: 0
+color.blue   # Outputs: 150
+
+
+Remember that, like tuples, namedtuples are immutable. Once you create an instance of a namedtuple, you can't change its values. If you need to change a value, you'd have to create a new instance.
+
+
+
+
+

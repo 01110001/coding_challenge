@@ -1,0 +1,21 @@
+# Read input
+n = int(input())
+numbers = list(map(int, input().split()))
+
+# Initialize flags for conditions
+all_positive = True
+has_palindrome = False
+
+# Check conditions
+for num in numbers:
+    # Check if all numbers are positive
+    if num <= 0:
+        all_positive = False
+        break
+    
+    # Check for a palindromic number
+    if str(num) == str(num)[::-1]: #str(num)[::-1]: reverse the number
+        has_palindrome = True
+
+# Print the final result based on the flags
+print(all_positive and has_palindrome)

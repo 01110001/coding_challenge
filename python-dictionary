@@ -1,0 +1,22 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import OrderedDict
+
+ord_dict = OrderedDict()
+
+num_item = int(input())
+
+for i in range(num_item):
+    # Split the line into everything before the last space (name) and everything after (price)
+    item = input().rsplit(' ', 1)
+    name = item[0]
+    price = int(item[1])
+    
+    # Check if the item is already in the dictionary
+    if name in ord_dict:
+        ord_dict[name] += price  # Add the price to the existing value
+    else:
+        ord_dict[name] = price  # Insert the new item and price into the dictionary
+
+# Print the items and their net prices
+for name, price in ord_dict.items():
+    print(name, price)

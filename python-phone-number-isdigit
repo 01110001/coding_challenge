@@ -1,0 +1,9 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n = int(input())
+
+for i in range(n):
+    number = input()
+    if str(number)[0] in ['7','8','9'] and number.isdigit() and len(str(number)) == 10:
+        print('YES')
+    else:
+        print('NO')

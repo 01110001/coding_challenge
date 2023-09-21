@@ -1,0 +1,12 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+first_input = int(input())
+sec_input = set(map(int,input().split()))
+third_input = int(input())
+fourth_input = set(map(int,input().split()))
+
+# Get symmetric difference
+sym_diff = list(sec_input ^ fourth_input)
+
+# Sort the symmetric difference and print the elements
+for i in sorted(sym_diff):
+    print(i)

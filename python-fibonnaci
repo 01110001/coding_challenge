@@ -1,0 +1,12 @@
+# Lambda function to cube a number
+cube = lambda x: x**3
+
+# Function to return a list of Fibonacci numbers
+def fibonacci(n):
+    fib_series = []
+    a, b = 0, 1
+    for _ in range(n):
+        fib_series.append(a)
+      The line a, b = b, a + b swaps a with b and updates b to be the sum of the old a and b. This is done in one step, making it efficient.
+        a, b = b, a + b
+    return fib_series

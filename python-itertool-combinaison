@@ -1,0 +1,14 @@
+from itertools import combinations
+phrase = input().split()
+
+hack = phrase[0]
+n = int(phrase[1])
+
+# Sort the string lexicographically to get sorted combinations
+hack = ''.join(sorted(hack)) #output achk
+
+# Generate and print all combinations from 1 to n
+for i in range(1, n + 1):
+    #print(combinations(hack, i)) # this will no work the output is an itertools object
+   for j in combinations(hack, i): # when i = 1 first loop will print h,a,c,k then second loop all combinaison of i=2
+       print(''.join(j))

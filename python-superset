@@ -1,0 +1,21 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Read and store the elements of set A
+A = set(map(int, input().split()))
+
+# Read the number of other sets
+n = int(input())
+
+# Initialize a flag to keep track of the strict superset condition
+is_strict_superset = True
+
+# Loop through each of the n sets
+for _ in range(n):
+    B = set(map(int, input().split()))
+    
+    # Check if A is a strict superset of B
+    if not (A > B):
+        is_strict_superset = False
+        break
+
+# Print the result
+print(is_strict_superset)

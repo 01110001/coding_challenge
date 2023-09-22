@@ -1,0 +1,16 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import re
+
+n = int(input())
+
+for _ in range(n):
+    regex = input()
+    try:
+        re.compile(regex)
+        print("True")
+    except re.error:
+        print("False")
+
+
+The re.compile() function tries to compile the regex string into a regular expression object. If it succeeds, the code proceeds without any issues. 
+If it fails (e.g., because the regex is invalid), it will throw an exception of type re.error.

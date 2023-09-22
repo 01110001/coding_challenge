@@ -1,0 +1,16 @@
+# Read the number of test cases
+t = int(input())
+
+# Loop through each test case
+for _ in range(t):
+    s = input().strip()  # Read and strip the input string
+
+    # Check if the string can be a valid float
+    if s.count('.') == 1 and all(c.isdigit() or c in ['+', '-', '.'] for c in s):
+        try:
+            float_num = float(s)
+            print("True")
+        except ValueError:
+            print("False")
+    else:
+        print("False")

@@ -1,0 +1,15 @@
+import re
+
+# Read the input string
+input_str = input()
+
+# Use regular expression to find the first repeating alphabetical character
+#So the whole regex r'([a-zA-Z0-9])\1' will find the first occurrence of any alphanumeric character immediately followed by the same character.
+match = re.search(r'([a-zA-Z0-9])\1', input_str)
+
+# Print the result
+#The group(1) method retrieves the character captured by the first capturing group.
+if match:
+    print(match.group(1))
+else:
+    print(-1)

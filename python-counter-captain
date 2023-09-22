@@ -1,0 +1,26 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import Counter
+
+# Read the number of families in each group (not actually used for this approach)
+k = int(input())
+
+# Read the room numbers and convert them to a list of integers
+room_list = list(map(int, input().split()))
+
+# Count the occurrences of each number
+count_dict = Counter(room_list)
+
+# Find the room number with the lowest count (should be 1)
+#find the key whose value (count) is the minimum.
+captain_room = min(count_dict, key=count_dict.get)
+
+# Output the Captain's room number
+print(captain_room)
+
+#counter function
+# Loop through the room list to count the occurrences of each number
+for room in room_list:
+    if room in count_dict:
+        count_dict[room] += 1
+    else:
+        count_dict[room] = 1

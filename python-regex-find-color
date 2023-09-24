@@ -1,0 +1,20 @@
+import re
+
+# Number of lines
+n = int(input())
+
+# Initialize an empty string to collect the CSS code
+css_code = ""
+
+# Read each line of CSS code
+for _ in range(n):
+    css_code += input()
+
+# Use a regular expression to find all the blocks of code within curly braces
+blocks = re.findall(r'{[^}]*}', css_code)
+
+# For each block, search for hex color codes
+for block in blocks:
+    colors = re.findall(r'#([a-fA-F0-9]{3,6})', block)
+    for color in colors:
+        print(f"#{color}")

@@ -1,0 +1,17 @@
+import re
+import email.utils
+
+# Regular expression pattern to validate the email address
+email_pattern = r'^[a-zA-Z][\w.-]+@[a-zA-Z]+\.[a-zA-Z]{1,3}$'
+
+# Number of test cases
+n = int(input())
+
+for _ in range(n):
+    # Parsing the input
+    parsed_email = email.utils.parseaddr(input().strip())
+    name, email_addr = parsed_email  # Note the variable name change here
+    
+    # Validating the email address using the re.match() function
+    if re.match(email_pattern, email_addr):
+        print(email.utils.formataddr((name, email_addr)))  # And also here

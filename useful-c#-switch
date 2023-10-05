@@ -1,0 +1,32 @@
+using System;
+class Exercise1 {
+
+  public static double test(double num1, double num2, char Operator) {
+    double temp = 0;
+    //write the code here
+    switch(Operator)
+    {
+      case '+':
+      temp = num1 + num2;
+      break;
+      
+      case '-':
+      temp = num1 - num2;
+      break;
+
+      case '*':
+      temp = num1 * num2;
+      break;
+
+      case '/':
+      temp = num1 / num2;
+      break;
+
+    }
+
+
+    return temp;
+
+  }
+
+}

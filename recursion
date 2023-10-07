@@ -1,0 +1,11 @@
+import xml.etree.ElementTree as etree
+
+def get_attr_number(node):
+    # Initialize the score with the number of attributes of the current node
+    score = len(node.attrib)
+
+    # Recursively add the score for each child node
+    for child in node:
+        score += get_attr_number(child)
+
+    return score

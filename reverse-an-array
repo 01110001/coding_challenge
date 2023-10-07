@@ -1,0 +1,7 @@
+    # Convert the input list to a numpy array of type float
+    arr = np.array(arr, float)
+    
+    # Reverse the numpy array
+    reversed_array = arr[::-1]
+    
+    return reversed_array

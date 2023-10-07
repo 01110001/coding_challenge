@@ -1,0 +1,14 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy as np
+
+# Read the input
+input_line = input()
+
+# Convert the input string into a list of integers
+numbers_list = list(map(int, input_line.split()))
+
+# Convert the list to a 3x3 numpy array
+array_3x3 = np.array(numbers_list).reshape(3, 3)
+
+# Print the 3x3 array
+print(array_3x3)

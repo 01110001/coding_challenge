@@ -1,0 +1,22 @@
+from html.parser import HTMLParser
+
+class MyHTMLParser(HTMLParser):
+    def handle_comment(self, data):
+        if '\n' in data:  # Check if it's a multi-line comment
+            print(">>> Multi-line Comment")
+        else:  # Else it's a single-line comment
+            print(">>> Single-line Comment")
+        print(data)
+
+    def handle_data(self, data):
+        if data.strip():  # Check if the data is not just whitespace
+            print(">>> Data")
+            print(data)
+
+# Read the input
+n = int(input().strip())
+data = "\n".join([input().strip() for _ in range(n)])
+
+# Create an instance of the custom parser and feed the data
+parser = MyHTMLParser()
+parser.feed(data)
